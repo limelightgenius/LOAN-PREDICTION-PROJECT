@@ -34,7 +34,7 @@ could prevent an estimated $750,000 in annual losses.
 
 ## 2. The Dataset
 
-**Source:** Loan Prediction Problem Dataset via Kaggle  [https://www.kaggle.com/datasets/architsharma01/loan-approval-prediction-dataset]
+**Source:** Loan Prediction Problem Dataset via Kaggle  https://www.kaggle.com/datasets/architsharma01/loan-approval-prediction-dataset
 **Size:** 614 applications, 13 columns
 ---
 
@@ -47,25 +47,24 @@ version that fed into the next.
 
 ---
 
-### Step 1 — Excel: Initial Cleaning
-
-> 📸 *[Screenshot: Excel table showing cleaned dataset]*
+### Step 1 - Excel: Initial Cleaning
+<img width="661" height="380" alt="EXCEL DASHBOARD" src="https://github.com/user-attachments/assets/710209e5-d21e-4f28-a92f-1dd53596f3ed" />
 
 - Removed duplicate rows
 - Handled missing values across 7 columns:
   - Gender, Married, Dependents, Self_Employed → filled with mode
   - LoanAmount → filled with median (128) due to right skew
   - Loan_Amount_Term → filled with mode (360 months)
-  - Credit_History → filled with 0 (unknown = no history — 
+  - Credit_History → filled with 0 (unknown = no history -
     conservative banking decision)
-- Replaced `3+` in Dependents with `3` — was causing 51 rows to 
+- Replaced `3+` in Dependents with `3` - was causing 51 rows to 
   be dropped on MySQL import
 - Multiplied LoanAmount by 1,000 to reflect true dollar values
-- Saved as new file — raw CSV untouched
+- Saved as new file - raw CSV untouched
 
 ---
 
-### Step 2 — MySQL: Deep Cleaning and Business Analysis
+### Step 2 - MySQL: Deep Cleaning and Business Analysis
 
 **Overall Approval Rate**
 ```sql
@@ -122,8 +121,6 @@ SELECT COUNT(*) AS Total_Applications,
         AND Total_household_income < 8000 THEN 1 ELSE 0 END) AS Reject
 FROM Loan_dataset;
 ```
-
-> 📸 *[Screenshot: MySQL results grid showing recommendation output]*
 
 ---
 
@@ -236,7 +233,7 @@ than raw income.
 |---|---|---|
 | Approve | Credit History = 1 | 475 (77.4%) |
 | Reject | Credit History = 0, Income < £8,000 | 114 (18.6%) |
-| Review | Credit History = 0, Income ≥ £8,000 | 25 (4.1%) |
+| Review | Credit History = 0, Income >= £8,000 | 25 (4.1%) |
 
 ---
 
