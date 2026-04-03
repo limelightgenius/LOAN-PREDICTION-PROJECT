@@ -67,8 +67,6 @@ version that fed into the next.
 
 ### Step 2 — MySQL: Deep Cleaning and Business Analysis
 
-> 📸 *[Screenshot: MySQL Workbench showing cleaned table]*
-
 **Overall Approval Rate**
 ```sql
 SELECT COUNT(*) AS Total_Applications,
@@ -155,43 +153,37 @@ corr = df[['Total_household_income', 'Loan_Amount',
            'Debt_to_income_ratio', 'Credit_History']].corr()
 print(corr)
 ```
-
-> 📸 *[Screenshot: Correlation matrix output]*
+<img width="1000" height="600" alt="Correllation_heatmap" src="https://github.com/user-attachments/assets/36b76958-860c-4ec6-8782-be45144b33a6" />
 
 ---
 
 **Visualisations**
 
 **Approval Rate by Credit History**
-
-> 📸 *[Chart: Approval Rate by Credit History — bar chart]*
+<img width="640" height="480" alt="Approval_by_credit_history" src="https://github.com/user-attachments/assets/3e22ed48-0226-4157-b1fb-deb0090818ed" />
 
 **Distribution of Loan Amounts**
-
-> 📸 *[Chart: Distribution of Loan Amounts — histogram with mean 
-and median lines]*
+<img width="1000" height="600" alt="Distribution_of_loan_Amount" src="https://github.com/user-attachments/assets/8d2baf49-4a29-414e-9bcd-cb3078bfd39a" />
 
 **Distribution of Total Household Income**
 
-> 📸 *[Chart: Distribution of Total Household Income — histogram]*
+<img width="1500" height="600" alt="Distribution_of_household_income" src="https://github.com/user-attachments/assets/97f149c4-6e65-4e0a-adbb-7e26bf81d748" />
 
 **Loan Amount vs Total Household Income**
 
-> 📸 *[Chart: Scatter plot coloured by Loan Status]*
+<img width="1000" height="600" alt="loan_Amount_VS_total_income" src="https://github.com/user-attachments/assets/deb9f887-c65c-4dc2-920d-37daa1a8a50b" />
 
 **Correlation Heatmap**
+<img width="1000" height="600" alt="Correllation_heatmap" src="https://github.com/user-attachments/assets/bea483e4-8150-454e-a8b9-62cdd445ae93" />
 
-> 📸 *[Chart: Correlation Heatmap — RdYlGn colourmap]*
 
 **Loan Approval Recommendations**
-
-> 📸 *[Chart: Pie chart — Approve 77.4%, Reject 18.6%, Review 4.1%]*
+<img width="500" height="300" alt="Loan Approval Recommnedation" src="https://github.com/user-attachments/assets/a5b5f8c9-eab3-4ef3-8b9d-8ac7cdc2c505" />
 
 ---
 
 ### Step 4 — Power BI: Interactive Dashboard
-
-> 📸 *[Screenshot: Full Power BI Dashboard]*
+<img width="773" height="430" alt="FINANCE 3 DASHBOARD" src="https://github.com/user-attachments/assets/aea72057-3b27-4f66-822a-91a456e730a5" />
 
 - KPI cards: overall approval rate, total applications, 
   average loan amount, high risk count
@@ -206,33 +198,30 @@ and median lines]*
 
 ## 4. Key Findings
 
-### Finding 1 — Credit history is the single biggest approval driver
+### Finding 1 - Credit history is the single biggest approval driver
 
 Applicants with credit history were approved at **80%**. 
 Those without were approved at only **32%**. No other variable 
 came close to this gap.
 
-> 📸 *[Chart: Approval Rate by Credit History]*
 
-### Finding 2 — Education affects approval but less than expected
+### Finding 2 - Education affects approval but less than expected
 
 Graduate applicants were approved at **71%** versus **61%** for 
 non-graduates. The gap exists but is modest.
 
-### Finding 3 — Location matters
+### Finding 3 - Location matters
 
 Semiurban applicants had the highest approval rate at **77%**, 
 followed by Urban at **66%** and Rural at **61%**.
 
-> 📸 *[Chart: Approval Rate by Property Area]*
-
-### Finding 4 — Debt burden is a clearer risk signal than income alone
+### Finding 4 - Debt burden is a clearer risk signal than income alone
 
 Approved applicants consistently carried a lower debt-to-income ratio 
 than rejected ones. Affordability relative to loan size matters more 
 than raw income.
 
-### Finding 5 — Correlation analysis confirms the patterns statistically
+### Finding 5 - Correlation analysis confirms the patterns statistically
 
 | Variable Pair | Correlation | What It Means |
 |---|---|---|
@@ -240,17 +229,14 @@ than raw income.
 | Total_Income vs DTI_Ratio | -0.39 | Higher income reduces debt burden |
 | Credit_History vs all | ~0.00 | Operates independently — pure behavioural signal |
 
-> 📸 *[Chart: Correlation Heatmap]*
 
-### Finding 6 — Approval recommendation model
+### Finding 6 - Approval recommendation model
 
 | Recommendation | Criteria | Count |
 |---|---|---|
 | Approve | Credit History = 1 | 475 (77.4%) |
 | Reject | Credit History = 0, Income < £8,000 | 114 (18.6%) |
 | Review | Credit History = 0, Income ≥ £8,000 | 25 (4.1%) |
-
-> 📸 *[Chart: Approval Recommendations Pie Chart]*
 
 ---
 
@@ -299,7 +285,7 @@ income that would otherwise be declined.
 Credit history is the dominant predictor. Debt-to-income ratio is more 
 useful than raw income. Location signals exist but require further 
 investigation. A structured three-tier approval model - Approve, 
-Review, Reject — gives loan officers a data-driven framework to replace 
+Review, Reject - gives loan officers a data-driven framework to replace 
 gut-feeling decisions.
 
 Based on the numbers in this analysis, implementing these criteria 
