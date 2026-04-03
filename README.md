@@ -124,7 +124,7 @@ FROM Loan_dataset;
 
 ---
 
-### Step 3 — Python: Exploratory Analysis and Visualisations
+### Step 3 - Python: Exploratory Analysis and Visualisations
 
 **Feature Engineering**
 ```python
@@ -179,7 +179,7 @@ print(corr)
 
 ---
 
-### Step 4 — Power BI: Interactive Dashboard
+### Step 4 - Power BI: Interactive Dashboard
 <img width="773" height="430" alt="FINANCE 3 DASHBOARD" src="https://github.com/user-attachments/assets/aea72057-3b27-4f66-822a-91a456e730a5" />
 
 - KPI cards: overall approval rate, total applications, 
